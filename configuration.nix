@@ -5,7 +5,7 @@
   # -----------------------------------------------------------
   # System
   # -----------------------------------------------------------
-  system.stateVersion = "24.11";
+  system.stateVersion = "25.05";
   networking.networkmanager.enable = true; # Network management daemon
   virtualisation.docker.enable = true; # Enable Docker daemon
 

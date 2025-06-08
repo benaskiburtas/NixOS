@@ -1,21 +1,5 @@
-# System configuration selector
+# Basic system configuration
 {
-  config,
-  lib,
-  pkgs,
-  ...
-}:
-
-{
-  # Select which host configuration to use
-  imports = [
-    # Import base system configuration
-    ./configuration.nix
-
-    # Import host-specific configuration
-    ./hosts/AKATOSH
-
-    # Import user-specific configuration(s)
-    ./users/peach.nix
-  ];
+  host = "AKATOSH"; # Maps to configuration in hosts/
+  users = [ "peach" ]; # Maps to configurations in users/
 }
