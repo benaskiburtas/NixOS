@@ -9,6 +9,6 @@
 {
   imports = [
     ./hardware-configuration.nix # Auto-generated hardware config
-    ./host-specific.nix # Host-specific settings
+    ./config.nix # Host-specific settings
   ];
 }
