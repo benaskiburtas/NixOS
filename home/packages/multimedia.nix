@@ -14,6 +14,7 @@
     obsidian # Note-taking (GUI)
     rofi # Application launcher (GUI)
     spotify # Music streaming (GUI)
+    vlc # Media player (GUI)
     wiki-tui # Wikipedia TUI client, command: wiki-tui
     qbittorrent # Bittorrent client (GUI)
   ];
