@@ -2,12 +2,11 @@
 { config, pkgs, ... }:
 
 {
-  # Install ncspot
   home.packages = with pkgs; [
     ncspot
   ];
 
-  # Create ncspot configuration
+  # Default ncspot configuration
   xdg.configFile."ncspot/config.toml".text = ''
     [audio]
     # Volume normalization
