@@ -4,7 +4,7 @@
   imports = [
     ./git.nix
     ./ncspot.nix
-    ./obs-studio/obs-studio.nix
+    ./obs-studio
     ./terminal
   ];
 }
