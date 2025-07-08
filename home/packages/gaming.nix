@@ -11,7 +11,7 @@
     protonplus # Proton version manager (GUI)
     protontricks # Proton/Steam helper, command: protontricks
     r2modman # Mod manager (GUI)
-    wineWow64Packages.waylandFull # Wine with Wayland support
+    wineWowPackages.staging
     winetricks # Wine helpers, command: winetricks
   ];
 }
