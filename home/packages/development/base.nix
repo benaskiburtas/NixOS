@@ -7,8 +7,8 @@
     # Development Tools
     # -----------------------------------------------------------
     asdf-vm # Multi-language version manager, command: asdf
+    lunarvim # Neovim distribution, command: lvim
     tokei # Code counter, command: tokei
-    vim # Text editor, command: vim
     vscodium-fhs # Open source code editor (GUI)
   ];
 }
