@@ -4,6 +4,6 @@
 {
   home.packages = with pkgs; [
     jetbrains.idea-community # JetBrains IntelliJ IDEA Community Edition (GUI)
-    jetbrains.jdk # JetBrains Java Development Kit, command: java
+    temurin-bin-24 # Eclipse Temurin, prebuild OpenJDK binary
   ];
 }
