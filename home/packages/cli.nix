@@ -27,9 +27,7 @@
     tree # Directory tree viewer, command: tree
     uutils-coreutils # GNU Core Utilities, rewritten in Rust, commands: cp, chmod, date, echo, etc.
     which # Locate command binaries, command: which
-    yazi # File manager, command: yazi
     yq-go # YAML processor (Go version), command: yq
-    zellij # Terminal workspace, command: zellij
     zoxide # Smarter 'cd' command, in Rust, command: z
   ];
 }
