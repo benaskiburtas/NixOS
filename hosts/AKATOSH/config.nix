@@ -30,7 +30,10 @@ in
         graphics = {
           enable = true;
           extraPackages = with pkgs; [
-            vpl-gpu-rt # Hardware acceleration for Intel GPUs
+            vpl-gpu-rt
+            intel-compute-runtime
+            intel-gmmlib
+            intel-graphics-compiler
           ];
         };
       };
