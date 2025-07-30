@@ -9,12 +9,17 @@
       url = "github:justchokingaround/lobster";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    lsfg-vk-flake = {
+      url = "github:pabloaul/lsfg-vk-flake/main";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     {
       nixpkgs,
       home-manager,
       lobster,
+      lsfg-vk-flake,
       ...
     }@inputs:
     let
@@ -49,10 +54,11 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = { inherit lobster; };
+            home-manager.extraSpecialArgs = { inherit lobster lsfg-vk-flake; };
           }
+          lsfg-vk-flake.nixosModules.default
         ];
-        specialArgs = { inherit lobster; };
+        specialArgs = { inherit lobster lsfg-vk-flake; };
       };
     };
 }
