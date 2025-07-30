@@ -105,6 +105,11 @@
     gamemode.enable = true; # Game performance boost daemon
   };
 
+  services.lsfg-vk = {
+    enable = true;
+    ui.enable = true;
+  };
+
   # -----------------------------------------------------------
   # Security
   # -----------------------------------------------------------
