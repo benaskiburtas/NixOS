@@ -1,6 +1,5 @@
 { config, pkgs, ... }:
 {
-  # NixOS user configuration
   users.users.peach = {
     isNormalUser = true;
     description = "Peach";
@@ -8,6 +7,8 @@
       "networkmanager" # Network configuration privileges
       "wheel" # Sudo access
       "docker" # Access to Docker socket
+      "waydroid" # Waydroid container access
+      "lxd" # LXD container access
     ];
     shell = pkgs.fish;
   };
