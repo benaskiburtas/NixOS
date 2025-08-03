@@ -26,7 +26,7 @@
       systemConfig = import ./config.nix;
       host = systemConfig.host;
 
-      hostConfig = import ./hosts/${host}/config.nix;
+      hostConfig = import ./hosts/${host}/configuration.nix;
       architecture = hostConfig.meta.architecture;
       hostName = hostConfig.meta.hostName;
 
