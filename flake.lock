@@ -21,27 +21,6 @@
         "type": "github"
       }
     },
-    "lobster": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "systems": "systems"
-      },
-      "locked": {
-        "lastModified": 1746741318,
-        "narHash": "sha256-6Jf8nlsnwHjqkQMfCoLt1Svu4zTKwqkyI3eXFt341do=",
-        "owner": "justchokingaround",
-        "repo": "lobster",
-        "rev": "26b5c38aa32df6687c8a6f314b9cf91055817df9",
-        "type": "github"
-      },
-      "original": {
-        "owner": "justchokingaround",
-        "repo": "lobster",
-        "type": "github"
-      }
-    },
     "lsfg-vk-flake": {
       "inputs": {
         "nixpkgs": [
@@ -82,24 +61,8 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "lobster": "lobster",
         "lsfg-vk-flake": "lsfg-vk-flake",
         "nixpkgs": "nixpkgs"
-      }
-    },
-    "systems": {
-      "locked": {
-        "lastModified": 1689347949,
-        "narHash": "sha256-12tWmuL2zgBgZkdoB6qXZsgJEH9LR3oUgpaQq2RbI80=",
-        "owner": "nix-systems",
-        "repo": "default-linux",
-        "rev": "31732fcf5e8fea42e59c2488ad31a0e651500f68",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-systems",
-        "repo": "default-linux",
-        "type": "github"
       }
     }
   },
