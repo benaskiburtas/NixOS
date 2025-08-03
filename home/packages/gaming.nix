@@ -1,8 +1,9 @@
 # Gaming-related packages and tools
-{ pkgs, ... }:
+{ pkgs, waydroid-script, ... }:
 
 {
   home.packages = with pkgs; [
+    android-tools # ADB, fastboot, other tools, commands: adb, fastboot
     ferium # Minecraft mod manager, command: ferium
     heroic # Epic Games/GOG launcher (GUI)
     lutris # Game platform (GUI)
@@ -11,7 +12,8 @@
     protonplus # Proton version manager (GUI)
     protontricks # Proton/Steam helper, command: protontricks
     r2modman # Mod manager (GUI)
-    wineWowPackages.staging
+    waydroid # Android container runtime, command: waydroid
     winetricks # Wine helpers, command: winetricks
+    wineWowPackages.staging # Unstable Wine, command: wine
   ];
 }

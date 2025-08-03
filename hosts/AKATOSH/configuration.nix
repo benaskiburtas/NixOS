@@ -108,7 +108,11 @@ in
       };
 
       # Virtualization
-      virtualisation.docker.enable = true;
+      virtualisation = {
+        docker.enable = true;
+        waydroid.enable = true;
+        lxd.enable = true;
+      };
 
       # Security
       security = {
