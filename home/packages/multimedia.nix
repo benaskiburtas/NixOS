@@ -7,12 +7,13 @@
     discord # Chat client (GUI)
     easyeffects # Audio effects for PipeWire (GUI)
     ffmpeg # Media processing, commands: ffmpeg/ffprobe
-    kdePackages.kdenlive # Video Editor (GUI)
     kdePackages.kalk # KDE Calculator (GUI)
+    kdePackages.kdenlive # Video Editor (GUI)
     krita # Digital painting (GUI)
     librewolf # Privacy-focused Firefox fork (GUI)
     mpv # Media player, command: mpv
     obsidian # Note-taking (GUI)
+    planify # Task manager with Todoist support (GUI)
     qbittorrent # Bittorrent client (GUI)
     rofi # Application launcher (GUI)
     spotify # Music streaming (GUI)
