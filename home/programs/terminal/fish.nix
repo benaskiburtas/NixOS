@@ -64,8 +64,9 @@
       cd = "z"; # Use zoxide instead of cd
 
       # Nix
-      nixgc = "nix-collect-garbage -d && sudo nix-collect-garbage -d";
       nixclean = "nix-collect-garbage -d && sudo nix-collect-garbage -d";
+      nixgc = "nix-collect-garbage -d && sudo nix-collect-garbage -d";
+      nixrs = "sudo nixos-rebuild switch";
     };
 
     # Fish-specific initialization and functions
