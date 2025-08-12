@@ -11,7 +11,6 @@
     gnumake
     lazygit
     nodejs
-    nodePackages.npm
     python3
     python3Packages.pip
     ripgrep
