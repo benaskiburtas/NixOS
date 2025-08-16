@@ -12,6 +12,7 @@
       git
       vim
       wget
+      gparted
     ];
     variables.EDITOR = "vim";
   };
