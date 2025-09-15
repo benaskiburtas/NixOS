@@ -35,6 +35,7 @@ in
       };
 
       hardware = {
+        enableRedistributableFirmware = true;
         xone.enable = true;
         bluetooth = {
           enable = true;
@@ -44,10 +45,12 @@ in
           enable = true;
           # Intel GPU specific packages
           extraPackages = with pkgs; [
-            vpl-gpu-rt
             intel-compute-runtime
             intel-gmmlib
             intel-graphics-compiler
+            intel-media-driver
+            mesa
+            vpl-gpu-rt
           ];
         };
       };
@@ -90,6 +93,7 @@ in
 
       # Gaming Configuration
       programs = {
+        gpu-screen-recorder.enable = true;
         gamescope.enable = true;
         steam = {
           enable = true;
