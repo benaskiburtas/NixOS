@@ -9,8 +9,9 @@
     discord # Chat client (GUI)
     easyeffects # Audio effects for PipeWire (GUI)
     ffmpeg # Media processing, commands: ffmpeg/ffprobe
+    gpu-screen-recorder-gtk # GTK frontend for gpu-screen-recorder (GUI)
     kdePackages.kalk # KDE Calculator (GUI)
-    kdePackages.kdenlive # Video Editor (GUI)
+    libreoffice-still # OpenOffice productivity suite (GUI)
     librewolf # Privacy-focused Firefox fork (GUI)
     mpv # Media player, command: mpv
     obsidian # Note-taking (GUI)
