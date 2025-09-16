@@ -1,7 +1,6 @@
 # Kitty - performant GPU-accelerated terminal
 { pkgs, ... }:
 
-
 {
   home.packages = with pkgs; [
     maple-mono.NF

@@ -1,5 +1,5 @@
 # Yazi - terminal-based file manager
-{ pkgs, ... }: 
+{ pkgs, ... }:
 
 {
   programs.yazi = {
@@ -12,10 +12,16 @@
       };
       opener = {
         edit = [
-          { run = "lvim \"$@\""; block = true; }
+          {
+            run = "lvim \"$@\"";
+            block = true;
+          }
         ];
         text = [
-          { run = "lvim \"$@\""; block = true; }
+          {
+            run = "lvim \"$@\"";
+            block = true;
+          }
         ];
       };
     };
