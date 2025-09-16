@@ -36,7 +36,8 @@
           imports = [
             ./configuration.nix
             hostConfig.module
-          ] ++ (map (user: ./users/${user}.nix) systemConfig.users);
+          ]
+          ++ (map (user: ./users/${user}.nix) systemConfig.users);
         };
     in
     {
