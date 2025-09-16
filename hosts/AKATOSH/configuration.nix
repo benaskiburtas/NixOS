@@ -82,10 +82,10 @@ in
           };
         };
 
-        plex = {
+        jellyfin = {
           enable = true;
           openFirewall = true;
-          dataDir = "/var/lib/plex";
+          dataDir = "/var/lib/jellyfin";
         };
 
         ## Lossless Scaling (requires pabloaul/lsfg-vk-flake flake)
