@@ -19,16 +19,19 @@ in
         ./hardware-configuration.nix
       ];
 
+      environment.systemPackages = with pkgs; [
+        kdePackages.plasma-firewall
+      ];
+
       networking = {
         hostName = hostName;
         networkmanager.enable = true;
+        firewall.enable = true;
       };
 
-      # Localization
       time.timeZone = "Europe/Vilnius";
       i18n.defaultLocale = "en_US.UTF-8";
 
-      # Boot Configuration
       boot.loader = {
         systemd-boot.enable = true;
         efi.canTouchEfiVariables = true;
@@ -55,44 +58,54 @@ in
         };
       };
 
-      # Desktop Environment
       services = {
         displayManager.sddm.enable = true;
         desktopManager.plasma6.enable = true;
         blueman.enable = true;
-      };
 
-      # Audio
-      services.pipewire = {
-        enable = true;
-        alsa = {
-          enable = true;
-          support32Bit = true;
+        xserver = {
+          xkb.layout = "us,lt";
+          xkb.options = "grp:win_space_toggle";
         };
-        # Helps resolve audio output crackling when using heavier audio effects in Easy Effects
-        extraConfig.pipewire."custom-adjustments" = {
-          "context.properties" = {
-            "link.max-buffers" = 64;
-            "default.clock.rate" = 48000;
-            "default.clock.quantum" = 1024;
-            "default.clock.min-quantum" = 1024;
-            "default.clock.max-quantum" = 2048;
+
+        pipewire = {
+          enable = true;
+          alsa = {
+            enable = true;
+            support32Bit = true;
+          };
+          # Helps resolve audio output crackling when using heavier audio effects in Easy Effects
+          extraConfig.pipewire."custom-adjustments" = {
+            "context.properties" = {
+              "link.max-buffers" = 64;
+              "default.clock.rate" = 48000;
+              "default.clock.quantum" = 1024;
+              "default.clock.min-quantum" = 1024;
+              "default.clock.max-quantum" = 2048;
+            };
           };
         };
-      };
 
-      # Keyboard
-      services.xserver = {
-        xkb.layout = "us,lt";
-        xkb.options = "grp:win_space_toggle";
+        plex = {
+          enable = false;
+          openFirewall = true;
+          dataDir = "/var/lib/plex";
+        };
+
+        ## Lossless Scaling (requires pabloaul/lsfg-vk-flake flake)
+        lsfg-vk = {
+          enable = true;
+          ui.enable = true;
+        };
       };
 
       # Shell
-      programs.fish.enable = true;
       users.defaultUserShell = pkgs.fish;
 
-      # Gaming Configuration
       programs = {
+        fish.enable = true;
+
+        # Gaming Configuration
         gpu-screen-recorder.enable = true;
         gamescope.enable = true;
         steam = {
@@ -105,20 +118,12 @@ in
         gamemode.enable = true;
       };
 
-      ## Lossless Scaling (requires pabloaul/lsfg-vk-flake flake)
-      services.lsfg-vk = {
-        enable = true;
-        ui.enable = true;
-      };
-
-      # Virtualization
       virtualisation = {
         docker.enable = true;
         waydroid.enable = true;
         lxd.enable = true;
       };
 
-      # Security
       security = {
         polkit.enable = true;
         rtkit.enable = true;
