@@ -19,10 +19,6 @@ in
         ./hardware-configuration.nix
       ];
 
-      environment.systemPackages = with pkgs; [
-        kdePackages.plasma-firewall
-      ];
-
       networking = {
         hostName = hostName;
         networkmanager.enable = true;
@@ -87,7 +83,7 @@ in
         };
 
         plex = {
-          enable = false;
+          enable = true;
           openFirewall = true;
           dataDir = "/var/lib/plex";
         };
