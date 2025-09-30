@@ -10,5 +10,6 @@
     keepassxc # Password manager (GUI)
     openssl # Cryptographic library for SSL/TLS, command: openssl
     veracrypt # Filesystem with on-the-fly encryption (GUI)
+    yubioath-flutter # Yubico Authenticator (GUI)
   ];
 }

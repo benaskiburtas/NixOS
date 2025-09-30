@@ -58,6 +58,7 @@ in
         displayManager.sddm.enable = true;
         desktopManager.plasma6.enable = true;
         blueman.enable = true;
+        pcscd.enable = true;
 
         xserver = {
           xkb.layout = "us,lt";
