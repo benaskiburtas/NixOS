@@ -20,9 +20,10 @@ in
       ];
 
       networking = {
+        firewall.enable = true;
         hostName = hostName;
         networkmanager.enable = true;
-        firewall.enable = true;
+        nftables.enable = true;
       };
 
       time.timeZone = "Europe/Vilnius";
@@ -117,8 +118,8 @@ in
 
       virtualisation = {
         docker.enable = true;
+        incus.enable = true;
         waydroid.enable = true;
-        lxd.enable = true;
       };
 
       security = {
