@@ -22,7 +22,7 @@ in
       networking = {
         firewall = {
           enable = true;
-          allowedTCPPorts = [ 21 80 443 8080 ];
+          allowedTCPPorts = [ 80 443 2022 8080 ];
         };
         hostName = hostName;
         networkmanager.enable = true;
