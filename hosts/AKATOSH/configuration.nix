@@ -20,7 +20,10 @@ in
       ];
 
       networking = {
-        firewall.enable = true;
+        firewall = {
+          enable = true;
+          allowedTCPPorts = [ 21 80 443 8080 ];
+        };
         hostName = hostName;
         networkmanager.enable = true;
         nftables.enable = true;
