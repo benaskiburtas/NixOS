@@ -13,7 +13,6 @@
     protonplus # Proton version manager (GUI)
     protontricks # Proton/Steam helper, command: protontricks
     r2modman # Mod manager (GUI)
-    rimsort # Rimworld Mod Manager (GUI)
     samrewritten # Steam achievement manager (GUI)
     waydroid # Android container runtime, command: waydroid
     winetricks # Wine helpers, command: winetricks
