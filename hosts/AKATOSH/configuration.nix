@@ -122,7 +122,6 @@ in
       virtualisation = {
         docker.enable = true;
         incus.enable = true;
-        waydroid.enable = true;
       };
 
       security = {
