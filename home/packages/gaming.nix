@@ -1,5 +1,5 @@
 # Gaming-related packages and tools
-{ pkgs, waydroid-script, ... }:
+{ pkgs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -14,7 +14,6 @@
     protontricks # Proton/Steam helper, command: protontricks
     r2modman # Mod manager (GUI)
     samrewritten # Steam achievement manager (GUI)
-    waydroid # Android container runtime, command: waydroid
     winetricks # Wine helpers, command: winetricks
     wineWowPackages.staging # Unstable Wine, command: wine
   ];
