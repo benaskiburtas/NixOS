@@ -51,27 +51,19 @@
     fsType = "tmpfs";
   };
 
-  fileSystems."/mnt/small-ssd" = {
-    device = "/dev/mapper/small-ssd";
+  boot.initrd.luks.devices."small_ssd".device = "/dev/disk/by-uuid/9888dd6c-6f07-4f7a-8a57-78931bdc29ad";
+
+  fileSystems."/mnt/small_ssd" = {
+    device = "/dev/mapper/small_ssd";
     fsType = "ext4";
   };
 
-  boot.initrd.luks.devices."small-ssd".device =
-    "/dev/disk/by-uuid/a459ee00-bd13-48a0-86ee-2cf55055d1ac";
-
-  fileSystems."/mnt/ssd" = {
-    device = "/dev/mapper/ssd";
-    fsType = "ext4";
-  };
-
-  boot.initrd.luks.devices."ssd".device = "/dev/disk/by-uuid/2333fcc7-d73c-4975-b810-49cb4b281e78";
+  boot.initrd.luks.devices."hdd".device = "/dev/disk/by-uuid/38f9f91f-0d1c-4975-b475-336ab53794a0";
 
   fileSystems."/mnt/hdd" = {
     device = "/dev/mapper/hdd";
     fsType = "ext4";
   };
-
-  boot.initrd.luks.devices."hdd".device = "/dev/disk/by-uuid/38f9f91f-0d1c-4975-b475-336ab53794a0";
 
   swapDevices = [
     { device = "/dev/mapper/swap"; }
