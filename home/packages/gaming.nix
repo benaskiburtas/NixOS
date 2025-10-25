@@ -7,7 +7,6 @@
     bottles # Wineprefix manager (GUI)
     ferium # Minecraft mod manager, command: ferium
     heroic # Epic Games/GOG launcher (GUI)
-    lutris # Game platform (GUI)
     mangohud # Vulkan overlay for monitoring, command: mangohud
     prismlauncher # Minecraft launcher (GUI)
     protonplus # Proton version manager (GUI)
