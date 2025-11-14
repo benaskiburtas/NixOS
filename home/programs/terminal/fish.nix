@@ -4,6 +4,9 @@
 {
   programs.fish = {
     enable = true;
+    interactiveShellInit = ''
+      set fish_greeting # Disable greeting
+    '';
 
     plugins = [
       # FZF integration for fuzzy finding
