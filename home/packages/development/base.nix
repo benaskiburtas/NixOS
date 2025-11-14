@@ -3,9 +3,6 @@
 
 {
   home.packages = with pkgs; [
-    # -----------------------------------------------------------
-    # Development Tools
-    # -----------------------------------------------------------
     docker-compose # Docker automation tool, command: docker-compose
     jetbrains.webstorm # JetBrains WebStorm (GUI)
     python3 # Python programming language, command: python3
