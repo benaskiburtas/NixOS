@@ -1,17 +1,24 @@
 # Git configuration
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  userInfo,
+  ...
+}:
 
 {
   home.packages = with pkgs; [
-    delta # Syntax-highlighting pager for Git, command: delta
+    delta
   ];
 
   programs.git = {
     enable = true;
-    userName = "Benas Kiburtas";
-    userEmail = "benas.kiburtas@protonmail.com";
 
-    # Delta-specific configuration
+    settings = {
+      user.name = userInfo.fullName;
+      user.email = userInfo.email;
+    };
+
     extraConfig = {
       core.pager = "delta";
       interactive.diffFilter = "delta --color-only";

@@ -1,13 +1,19 @@
 { config, pkgs, ... }:
+let
+  userInfo = {
+    username = "peach";
+    fullName = "Benas Kiburtas";
+    email = "benas.kiburtas@protonmail.com";
+  };
+in
 {
   users.users.peach = {
     isNormalUser = true;
-    description = "Peach";
+    description = userInfo.username;
     extraGroups = [
-      "networkmanager" # Network configuration privileges
-      "wheel" # Sudo access
-      "docker" # Access to Docker socket
-      "lxd" # LXD container access
+      "networkmanager"
+      "wheel"
+      "docker"
     ];
     shell = pkgs.fish;
   };
@@ -27,7 +33,8 @@
       home = {
         username = "peach";
         homeDirectory = "/home/peach";
-        stateVersion = "25.05";
+        stateVersion = "25.11";
       };
+      _module.args = { inherit userInfo; };
     };
 }
