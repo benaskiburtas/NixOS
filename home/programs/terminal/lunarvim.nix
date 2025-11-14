@@ -15,6 +15,10 @@
     python3Packages.pip
     ripgrep
     rustup
+
+    # Language servers
+    lua-language-server
+    vscode-langservers-extracted # HTML / CSS / JSON
   ];
 
   home.sessionVariables = {

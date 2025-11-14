@@ -33,7 +33,6 @@
       ls = "eza --icons";
       ll = "eza -l --icons";
       la = "eza -la --icons";
-      tree = "eza --tree --icons";
 
       # Bat
       cat = "bat";
@@ -43,8 +42,8 @@
       gst = "git status";
       gco = "git checkout";
       gcb = "git checkout -b";
-      gpull = "git push";
-      gpush = "git pull";
+      gpush = "git push";
+      gpull = "git pull";
       gd = "git diff";
       ga = "git add";
       gc = "git commit";
