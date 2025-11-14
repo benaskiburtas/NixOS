@@ -105,7 +105,6 @@ in
         };
       };
 
-      # Shell
       users.defaultUserShell = pkgs.fish;
 
       programs = {

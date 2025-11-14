@@ -1,3 +1,4 @@
+# Cross-shell prompt
 { pkgs, ... }:
 
 {

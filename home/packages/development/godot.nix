@@ -3,7 +3,7 @@
 
 {
   home.packages = with pkgs; [
-    gdtoolkit_4 # GDScript parser/linter/formatter, command: gdtoolkit
-    godot_4 # 2D and 3D game engine (GUI)
+    gdtoolkit_4
+    godot_4
   ];
 }
