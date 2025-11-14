@@ -20,6 +20,6 @@
       shell = "zellij";
       copy_on_select = "clipboard";
     };
-    themeFile = "Catppuccin-Mocha";
+    themeFile = "Dracula";
   };
 }

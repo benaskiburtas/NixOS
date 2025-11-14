@@ -6,6 +6,7 @@
     enable = true;
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
+      zoxide init fish | source
     '';
 
     plugins = [
@@ -24,11 +25,6 @@
         name = "done";
         src = pkgs.fishPlugins.done.src;
       }
-      # Directory jumping
-      {
-        name = "z";
-        src = pkgs.fishPlugins.z.src;
-      }
     ];
 
     shellAliases = {
@@ -42,51 +38,52 @@
 
       # Git
       g = "git";
-      gst = "git status";
-      gco = "git checkout";
-      gcb = "git checkout -b";
-      gpush = "git push";
-      gpull = "git pull";
-      gd = "git diff";
       ga = "git add";
       gc = "git commit";
+      gcb = "git checkout -b";
       gcm = "git commit -m";
+      gco = "git checkout";
+      gd = "git diff";
+      gpull = "git pull";
+      gpush = "git push";
+      gst = "git status";
 
       # Docker
       d = "docker";
       dc = "docker-compose";
-      dps = "docker ps";
-      dpa = "docker ps -a";
-      di = "docker images";
       dex = "docker exec -it";
+      di = "docker images";
+      dpa = "docker ps -a";
+      dps = "docker ps";
 
       # Other
-      grep = "rg";
-      find = "fd";
+      cd = "z";
       du = "dust";
+      find = "fd";
+      grep = "rg";
 
       # Nix
-      nixsearch = "nix search nixpkgs";
-      nixpkg = "nix shell -p";
       nixclean = "nix-collect-garbage -d && sudo nix-collect-garbage -d";
+      nixpkg = "nix shell -p";
       nixrs = "sudo nixos-rebuild switch";
+      nixsearch = "nix search nixpkgs";
     };
 
     # Custom Fish functions
     functions = {
-      # Access Docker container shell
-      dsh = ''
-        function dsh --description "Enter shell in docker container"
-          docker exec -it $argv[1] /bin/bash 2>/dev/null || docker exec -it $argv[1] /bin/sh
-        end
-      '';
-
       # Docker cleanup
       dclean = ''
         function dclean --description "Clean up Docker containers and images"
           docker container prune -f
           docker image prune -f
           docker volume prune -f
+        end
+      '';
+
+      # Access Docker container shell
+      dsh = ''
+        function dsh --description "Enter shell in docker container"
+          docker exec -it $argv[1] /bin/bash 2>/dev/null || docker exec -it $argv[1] /bin/sh
         end
       '';
 
