@@ -4,6 +4,7 @@
 {
   home.packages = with pkgs; [
     btop # Resource monitor, command: btop
+    ctop # Top, for Docker containers, command: ctop
     hyperfine # Benchmarking tool, command: hyperfine
     iotop # Disk I/O monitoring, command: iotop
     lm_sensors # Hardware monitoring, commands: sensors, fancontrol

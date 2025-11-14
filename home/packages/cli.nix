@@ -14,18 +14,12 @@
     gitui # Git UI in terminal, command: gitui
     glow # Terminal markdown viewer, command: glow
     jq # JSON processor, command: jq
-    just # Run project-specific commands, command: just
-    kondo # Clean dependencies & build for various build tools, command: kondo
-    mask # Task runner, defined via markdown, command: mask
-    mprocs # Run commands in parallel, command: mprocs
     nix-output-monitor # Nix output parser, command: nom
-    nixfmt-rfc-style # Nix code formatter, command: nixfmt
-    pkg-config # Wrapper script for package information, command: pkg-config
+    nixfmt-tree # Nix code formatter, command: nixfmt
     presenterm # Terminal slideshow tool, command: presenterm
     ripgrep # Fast grep alternative, command: rg
     ripgrep-all # Like 'rg' but also does books, Office documents and etc. command: rga
     tree # Directory tree viewer, command: tree
-    uutils-coreutils # GNU Core Utilities, rewritten in Rust, commands: cp, chmod, date, echo, etc.
     which # Locate command binaries, command: which
     yq-go # YAML processor (Go version), command: yq
     zoxide # Smarter 'cd' command, in Rust, command: z
