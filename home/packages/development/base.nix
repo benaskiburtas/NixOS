@@ -3,9 +3,10 @@
 
 {
   home.packages = with pkgs; [
-    jetbrains.webstorm # JetBrains WebStorm (GUI)
+    jetbrains.webstorm
     nil # Nix LSP
-    tokei # Code counter, command: tokei
-    vscodium-fhs # Open source code editor (GUI)
+    sourcegit 
+    tokei
+    vscodium-fhs
   ];
 }

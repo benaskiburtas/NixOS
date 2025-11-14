@@ -6,7 +6,7 @@
     enable = true;
     settings = {
       default_mode = "locked";
-      theme = "catppuccin-mocha";
+      theme = "Dracula";
       show_startup_tips = false;
     };
   };
