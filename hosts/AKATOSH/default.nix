@@ -34,7 +34,10 @@ in
         nftables.enable = true;
       };
 
-      time.timeZone = "Europe/Vilnius";
+      time = {
+        timeZone = "Europe/Vilnius";
+        hardwareClockInLocalTime = true;
+      };
       i18n.defaultLocale = "en_US.UTF-8";
 
       boot.loader = {

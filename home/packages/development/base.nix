@@ -5,7 +5,7 @@
   home.packages = with pkgs; [
     jetbrains.webstorm
     nil # Nix LSP
-    sourcegit 
+    sourcegit
     tokei
     vscodium-fhs
   ];
