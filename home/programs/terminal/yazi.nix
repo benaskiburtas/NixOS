@@ -13,13 +13,13 @@
       opener = {
         edit = [
           {
-            run = "lvim \"$@\"";
+            run = "nvim \"$@\"";
             block = true;
           }
         ];
         text = [
           {
-            run = "lvim \"$@\"";
+            run = "nvim \"$@\"";
             block = true;
           }
         ];

@@ -14,6 +14,7 @@
     gitui
     glow
     jq
+    neovim
     nix-output-monitor
     nixfmt-tree
     presenterm
