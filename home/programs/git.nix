@@ -15,15 +15,12 @@
     enable = true;
 
     settings = {
-      user.name = userInfo.fullName;
-      user.email = userInfo.email;
-    };
-
-    extraConfig = {
       core.pager = "delta";
-      interactive.diffFilter = "delta --color-only";
       delta.navigate = true;
+      interactive.diffFilter = "delta --color-only";
       merge.conflictStyle = "zdiff3";
+      user.email = userInfo.email;
+      user.name = userInfo.fullName;
     };
   };
 }
