@@ -3,6 +3,7 @@
 
 {
   home.packages = with pkgs; [
+    archipelago
     bottles
     ferium
     heroic
