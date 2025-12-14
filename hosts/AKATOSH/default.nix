@@ -26,11 +26,19 @@ in
             80
             443
             2022
+            {
+              from = 1714;
+              to = 1764;
+            } # KDE Connect
             8080
             8096 # Jellyfin
             8920 # Jellyfin
           ];
           allowedUDPPorts = [
+            {
+              from = 1714;
+              to = 1764;
+            } # KDE Connect
             7359 # Jellyfin
           ];
         };
@@ -129,6 +137,7 @@ in
           gamescopeSession.enable = true;
         };
         gamemode.enable = true;
+        kdeconnect.enable = true;
       };
 
       virtualisation = {
