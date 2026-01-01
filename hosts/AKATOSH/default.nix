@@ -26,20 +26,24 @@ in
             80
             443
             2022
-            {
-              from = 1714;
-              to = 1764;
-            } # KDE Connect
             8080
             8096 # Jellyfin
             8920 # Jellyfin
           ];
-          allowedUDPPorts = [
+          allowedTCPPortRanges = [
             {
               from = 1714;
               to = 1764;
             } # KDE Connect
+          ];
+          allowedUDPPorts = [
             7359 # Jellyfin
+          ];
+          allowedUDPPortRanges = [
+            {
+              from = 1714;
+              to = 1764;
+            } # KDE Connect
           ];
         };
         hostName = hostName;

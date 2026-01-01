@@ -3,7 +3,7 @@
 
 {
   home.packages = with pkgs; [
-    jetbrains.idea-community
+    jetbrains.idea
     temurin-bin-25
   ];
 }
