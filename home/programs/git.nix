@@ -15,6 +15,7 @@
     enable = true;
 
     settings = {
+      core.editor = "nvim";
       core.pager = "delta";
       delta.navigate = true;
       interactive.diffFilter = "delta --color-only";

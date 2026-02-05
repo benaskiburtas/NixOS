@@ -14,6 +14,6 @@
     r2modman
     samrewritten
     winetricks
-    wineWowPackages.staging
+    wineWow64Packages.staging
   ];
 }

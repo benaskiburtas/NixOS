@@ -4,7 +4,6 @@
 {
   home.packages = with pkgs; [
     bat
-    dua
     dust
     eza
     fastfetch
@@ -16,13 +15,14 @@
     jq
     neovim
     nix-output-monitor
-    nixfmt-tree
     presenterm
+    rclone
     ripgrep
     ripgrep-all
     tree
     which
     yq-go
+    yt-dlp
     zoxide
   ];
 }

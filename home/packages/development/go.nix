@@ -9,5 +9,6 @@
     gopls
     gotools
     jetbrains.goland
+    pkgsite
   ];
 }
