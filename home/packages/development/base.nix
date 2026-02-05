@@ -7,7 +7,6 @@
     jetbrains.webstorm
     kubectl
     nil # Nix LSP
-    pkgsite
     sourcegit
     tokei
     vscodium-fhs

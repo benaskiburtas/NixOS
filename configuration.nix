@@ -10,13 +10,13 @@
     "flakes"
   ];
 
+  programs.neovim.defaultEditor = true;
+
   environment = {
     systemPackages = with pkgs; [
       git
-      vim
       wget
       gparted
     ];
-    variables.EDITOR = "vim";
   };
 }

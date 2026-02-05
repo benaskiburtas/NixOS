@@ -9,7 +9,7 @@ in
 {
   users.users.peach = {
     isNormalUser = true;
-    description = userInfo.username;
+    description = userInfo.fullName;
     extraGroups = [
       "networkmanager"
       "wheel"

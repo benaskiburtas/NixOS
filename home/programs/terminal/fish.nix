@@ -64,6 +64,7 @@
 
       # Nix
       nixclean = "nix-collect-garbage -d && sudo nix-collect-garbage -d";
+      nixfmt = "sudo nix fmt .";
       nixpkg = "nix shell -p";
       nixrs = "sudo nixos-rebuild switch";
       nixsearch = "nix search nixpkgs";
@@ -73,28 +74,14 @@
     functions = {
       # Docker cleanup
       dclean = ''
-        function dclean --description "Clean up Docker containers and images"
-          docker container prune -f
-          docker image prune -f
-          docker volume prune -f
-        end
+        docker container prune -f
+        docker image prune -f
+        docker volume prune -f
       '';
 
       # Access Docker container shell
       dsh = ''
-        function dsh --description "Enter shell in docker container"
-          docker exec -it $argv[1] /bin/bash 2>/dev/null || docker exec -it $argv[1] /bin/sh
-        end
-      '';
-
-      # Quick file search and edit
-      fe = ''
-        function fe --description "Find file and edit with $EDITOR"
-          set -l file (fd --type f | fzf)
-          if test -n "$file"
-            $EDITOR $file
-          end
-        end
+        docker exec -it $argv[1] /bin/bash 2>/dev/null || docker exec -it $argv[1] /bin/sh
       '';
     };
   };

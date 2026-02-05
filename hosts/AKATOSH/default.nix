@@ -23,10 +23,7 @@ in
         firewall = {
           enable = true;
           allowedTCPPorts = [
-            80
-            443
             2022
-            8080
             8096 # Jellyfin
             8920 # Jellyfin
           ];

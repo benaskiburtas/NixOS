@@ -1,8 +1,8 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.11";
+      url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     lsfg-vk-flake = {
@@ -18,8 +18,8 @@
       ...
     }@inputs:
     let
-      systemConfig = import ./config.nix;
-      host = systemConfig.host;
+      host = "AKATOSH"; # Maps to configuration in hosts/
+      users = [ "peach" ]; # Maps to configurations in users/
 
       hostConfig = import ./hosts/${host};
       architecture = hostConfig.meta.architecture;
@@ -37,7 +37,7 @@
             ./configuration.nix
             hostConfig.module
           ]
-          ++ (map (user: ./users/${user}.nix) systemConfig.users);
+          ++ (map (user: ./users/${user}.nix) users);
         };
     in
     {
