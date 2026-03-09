@@ -85,6 +85,10 @@ in
         desktopManager.plasma6.enable = true;
         blueman.enable = true;
         pcscd.enable = true;
+        mullvad-vpn = {
+          enable = true;
+          package = pkgs.mullvad-vpn;
+        };
 
         xserver = {
           xkb.layout = "us,lt";
