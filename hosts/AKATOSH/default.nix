@@ -19,6 +19,36 @@ in
         ./hardware-configuration.nix
       ];
 
+      boot.loader = {
+        systemd-boot.enable = true;
+        efi.canTouchEfiVariables = true;
+      };
+
+      hardware = {
+        enableRedistributableFirmware = true;
+        xone.enable = true;
+
+        bluetooth = {
+          enable = true;
+          powerOnBoot = true;
+        };
+
+        graphics = {
+          enable = true;
+          # Intel GPU specific packages
+          extraPackages = with pkgs; [
+            intel-compute-runtime
+            intel-gmmlib
+            intel-graphics-compiler
+            intel-media-driver
+            mesa
+            vpl-gpu-rt
+          ];
+        };
+      };
+
+      i18n.defaultLocale = "en_US.UTF-8";
+
       networking = {
         firewall = {
           enable = true;
@@ -48,52 +78,39 @@ in
         nftables.enable = true;
       };
 
-      time = {
-        timeZone = "Europe/Vilnius";
-        hardwareClockInLocalTime = true;
-      };
-      i18n.defaultLocale = "en_US.UTF-8";
-
-      boot.loader = {
-        systemd-boot.enable = true;
-        efi.canTouchEfiVariables = true;
-      };
-
-      hardware = {
-        enableRedistributableFirmware = true;
-        xone.enable = true;
-        bluetooth = {
+      programs = {
+        fish.enable = true;
+        gpu-screen-recorder.enable = true;
+        gamescope.enable = true;
+        gamemode.enable = true;
+        kdeconnect.enable = true;
+        steam = {
           enable = true;
-          powerOnBoot = true;
-        };
-        graphics = {
-          enable = true;
-          # Intel GPU specific packages
-          extraPackages = with pkgs; [
-            intel-compute-runtime
-            intel-gmmlib
-            intel-graphics-compiler
-            intel-media-driver
-            mesa
-            vpl-gpu-rt
-          ];
+          remotePlay.openFirewall = true;
+          dedicatedServer.openFirewall = true;
+          localNetworkGameTransfers.openFirewall = true;
+          gamescopeSession.enable = true;
         };
       };
 
       services = {
-        displayManager.sddm.enable = true;
-        desktopManager.plasma6.enable = true;
         blueman.enable = true;
-        pcscd.enable = true;
+        desktopManager.plasma6.enable = true;
+        displayManager.sddm.enable = true;
+        flatpak.enable = true;
+
+        jellyfin = {
+          enable = true;
+          openFirewall = true;
+          dataDir = "/var/lib/jellyfin";
+        };
+
         mullvad-vpn = {
           enable = true;
           package = pkgs.mullvad-vpn;
         };
 
-        xserver = {
-          xkb.layout = "us,lt";
-          xkb.options = "grp:win_space_toggle";
-        };
+        pcscd.enable = true;
 
         pipewire = {
           enable = true;
@@ -112,41 +129,27 @@ in
             };
           };
         };
-
-        jellyfin = {
-          enable = true;
-          openFirewall = true;
-          dataDir = "/var/lib/jellyfin";
+        xserver = {
+          xkb.layout = "us,lt";
+          xkb.options = "grp:win_space_toggle";
         };
-      };
-
-      users.defaultUserShell = pkgs.fish;
-
-      programs = {
-        fish.enable = true;
-
-        # Gaming Configuration
-        gpu-screen-recorder.enable = true;
-        gamescope.enable = true;
-        steam = {
-          enable = true;
-          remotePlay.openFirewall = true;
-          dedicatedServer.openFirewall = true;
-          localNetworkGameTransfers.openFirewall = true;
-          gamescopeSession.enable = true;
-        };
-        gamemode.enable = true;
-        kdeconnect.enable = true;
-      };
-
-      virtualisation = {
-        docker.enable = true;
-        incus.enable = true;
       };
 
       security = {
         polkit.enable = true;
         rtkit.enable = true;
+      };
+
+      time = {
+        timeZone = "Europe/Vilnius";
+        hardwareClockInLocalTime = true;
+      };
+
+      users.defaultUserShell = pkgs.fish;
+
+      virtualisation = {
+        docker.enable = true;
+        incus.enable = true;
       };
     };
 }

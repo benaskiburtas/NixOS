@@ -4,11 +4,8 @@
 {
   home.packages = with pkgs; [
     archipelago
-    bottles
     ferium
-    heroic
     mangohud
-    prismlauncher
     protonplus
     protontricks
     r2modman

@@ -5,11 +5,13 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
   outputs =
     {
       nixpkgs,
       home-manager,
+      nix-flatpak,
       ...
     }@inputs:
     let
@@ -45,7 +47,9 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.sharedModules = [ nix-flatpak.homeManagerModules.nix-flatpak ];
           }
+          nix-flatpak.nixosModules.nix-flatpak
         ];
       };
     };

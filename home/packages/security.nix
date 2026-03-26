@@ -3,8 +3,6 @@
 
 {
   home.packages = with pkgs; [
-    bitwarden-desktop
-    cryptomator
     cryptsetup
     gnupg
     openssl
