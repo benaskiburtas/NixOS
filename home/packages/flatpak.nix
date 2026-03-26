@@ -7,7 +7,6 @@
     "com.heroicgameslauncher.hgl"
     "com.spotify.Client"
     "com.usebottles.bottles"
-    "io.gitlab.librewolf-community"
     "md.obsidian.Obsidian"
     "org.cryptomator.Cryptomator"
     "org.prismlauncher.PrismLauncher"

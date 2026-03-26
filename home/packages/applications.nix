@@ -8,6 +8,7 @@
     easyeffects
     ffmpeg
     gpu-screen-recorder-gtk
+    librewolf
     mpv
     planify
     vlc
