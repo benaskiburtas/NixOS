@@ -118,12 +118,6 @@ in
           openFirewall = true;
           dataDir = "/var/lib/jellyfin";
         };
-
-        ## Lossless Scaling (requires pabloaul/lsfg-vk-flake flake)
-        lsfg-vk = {
-          enable = true;
-          ui.enable = true;
-        };
       };
 
       users.defaultUserShell = pkgs.fish;

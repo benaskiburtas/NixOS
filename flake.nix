@@ -5,16 +5,11 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    lsfg-vk-flake = {
-      url = "github:pabloaul/lsfg-vk-flake/main";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
   outputs =
     {
       nixpkgs,
       home-manager,
-      lsfg-vk-flake,
       ...
     }@inputs:
     let
@@ -50,11 +45,8 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = { inherit lsfg-vk-flake; };
           }
-          lsfg-vk-flake.nixosModules.default
         ];
-        specialArgs = { inherit lsfg-vk-flake; };
       };
     };
 }
