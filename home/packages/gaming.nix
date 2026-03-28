@@ -6,6 +6,7 @@
     archipelago
     ferium
     mangohud
+    poptracker
     protonplus
     protontricks
     r2modman
