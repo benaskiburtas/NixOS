@@ -53,26 +53,25 @@ in
       networking = {
         firewall = {
           enable = true;
-          allowedTCPPorts = [
-            2022
-            8096 # Jellyfin
-            8920 # Jellyfin
-          ];
-          allowedTCPPortRanges = [
-            {
-              from = 1714;
-              to = 1764;
-            } # KDE Connect
-          ];
-          allowedUDPPorts = [
-            7359 # Jellyfin
-          ];
-          allowedUDPPortRanges = [
-            {
-              from = 1714;
-              to = 1764;
-            } # KDE Connect
-          ];
+          interfaces."wlp4s0" = {
+            allowedTCPPorts = [
+              8096
+              8920
+            ]; # Jellyfin
+            allowedTCPPortRanges = [
+              {
+                from = 1714;
+                to = 1764;
+              }
+            ]; # KDE Connect
+            allowedUDPPorts = [ 7359 ]; # Jellyfin
+            allowedUDPPortRanges = [
+              {
+                from = 1714;
+                to = 1764;
+              }
+            ]; # KDE Connect
+          };
         };
         hostName = hostName;
         networkmanager.enable = true;
@@ -102,7 +101,6 @@ in
 
         jellyfin = {
           enable = true;
-          openFirewall = true;
           dataDir = "/var/lib/jellyfin";
         };
 
@@ -117,6 +115,10 @@ in
             PasswordAuthentication = false;
             PermitRootLogin = "no";
             ListenAddress = "127.0.0.1";
+            X11Forwarding = false;
+            AllowAgentForwarding = false;
+            MaxAuthTries = 3;
+            ClientAliveInterval = 300;
           };
         };
 
@@ -146,6 +148,13 @@ in
       };
 
       security = {
+        sudo = {
+          wheelNeedsPassword = true;
+          execWheelOnly = true;
+          extraConfig = ''
+            Defaults requiretty
+          '';
+        };
         polkit.enable = true;
         rtkit.enable = true;
       };
@@ -159,9 +168,9 @@ in
 
       users.defaultUserShell = pkgs.fish;
 
-      virtualisation = {
-        docker.enable = true;
-        incus.enable = true;
+      virtualisation.docker.rootless = {
+        enable = true;
+        setSocketVariable = true;
       };
     };
 }

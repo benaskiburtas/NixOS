@@ -6,7 +6,6 @@
     extraGroups = [
       "networkmanager"
       "wheel"
-      "docker"
     ];
     shell = pkgs.fish;
   };
@@ -40,6 +39,7 @@
       };
       home.activation.gitSecrets = lib.hm.dag.entryAfter [ "sops" ] ''
         mkdir -p ~/.config/git
+        install -m 600 /dev/null ~/.config/git/secrets.inc
         echo "[user]" > ~/.config/git/secrets.inc
         echo "  email = $(cat ${config.sops.secrets.email.path})" >> ~/.config/git/secrets.inc
         echo "  name = $(cat ${config.sops.secrets.fullname.path})" >> ~/.config/git/secrets.inc
