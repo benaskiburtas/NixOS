@@ -1,17 +1,19 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    sops-nix.url = "github:Mic92/sops-nix";
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
   outputs =
     {
       nixpkgs,
-      home-manager,
+      sops-nix,
       nix-flatpak,
+      home-manager,
       ...
     }@inputs:
     let
@@ -43,13 +45,16 @@
         system = architecture;
         modules = [
           mainConfig
+          sops-nix.nixosModules.sops
+          nix-flatpak.nixosModules.nix-flatpak
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.sharedModules = [ nix-flatpak.homeManagerModules.nix-flatpak ];
+            home-manager.sharedModules = [
+            sops-nix.homeManagerModules.sops
+            nix-flatpak.homeManagerModules.nix-flatpak ];
           }
-          nix-flatpak.nixosModules.nix-flatpak
         ];
       };
     };
