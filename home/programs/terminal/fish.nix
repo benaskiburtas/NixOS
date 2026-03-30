@@ -10,11 +10,6 @@
     '';
 
     plugins = [
-      # FZF integration for fuzzy finding
-      {
-        name = "fzf-fish";
-        src = pkgs.fishPlugins.fzf-fish.src;
-      }
       # Auto-pair brackets, quotes, etc.
       {
         name = "autopair";
@@ -65,7 +60,7 @@
       # Nix
       nixclean = "nix-collect-garbage -d && sudo nix-collect-garbage -d";
       nixfmt = "sudo nix fmt .";
-      nixpkg = "nix shell -p";
+      nixpkg = "nix-shell -p";
       nixrs = "sudo nixos-rebuild switch";
       nixsearch = "nix search nixpkgs";
     };
