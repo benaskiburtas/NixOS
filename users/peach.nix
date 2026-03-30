@@ -28,6 +28,7 @@
         username = "peach";
         homeDirectory = "/home/peach";
         stateVersion = "25.11";
+        sessionVariables.EDITOR = "nvim";
       };
 
       sops.age.keyFile = "/home/peach/.config/sops/age/keys.txt";
