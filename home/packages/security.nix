@@ -7,6 +7,8 @@
     cryptsetup
     gnupg
     openssl
+    sops
+    ssh-to-age
     veracrypt
     yubioath-flutter
   ];

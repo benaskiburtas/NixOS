@@ -1,0 +1,9 @@
+keys:
+  - &peach age13njqd9dt3j7ae47s03emze8eqkv2heqpxl75zu8k0447f5f5dy4sgv6ae9
+  - &akatosh age1286jqlqfn9usxv8hrgwuhym06nsu9g9a9f63egnk9d9m67d6qeusqaw4hl
+creation_rules:
+  - path_regex: secrets/.*\.yaml$
+    key_groups:
+      - age:
+          - *peach
+          - *akatosh
