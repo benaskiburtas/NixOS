@@ -52,8 +52,9 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.sharedModules = [
-            sops-nix.homeManagerModules.sops
-            nix-flatpak.homeManagerModules.nix-flatpak ];
+              sops-nix.homeManagerModules.sops
+              nix-flatpak.homeManagerModules.nix-flatpak
+            ];
           }
         ];
       };
