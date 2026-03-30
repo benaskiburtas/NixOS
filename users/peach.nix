@@ -1,15 +1,8 @@
-{ config, pkgs, ... }:
-let
-  userInfo = {
-    username = "peach";
-    fullName = "REDACTED";
-    email = "REDACTED";
-  };
-in
+{ pkgs, ... }:
 {
   users.users.peach = {
     isNormalUser = true;
-    description = userInfo.fullName;
+    description = "Peach";
     extraGroups = [
       "networkmanager"
       "wheel"
@@ -23,6 +16,7 @@ in
     {
       config,
       pkgs,
+      lib,
       ...
     }:
     {
@@ -35,6 +29,19 @@ in
         homeDirectory = "/home/peach";
         stateVersion = "25.11";
       };
-      _module.args = { inherit userInfo; };
+
+      sops.age.keyFile = "/home/peach/.config/sops/age/keys.txt";
+      sops.secrets.email = {
+        sopsFile = ../secrets/peach.yaml;
+      };
+      sops.secrets.fullname = {
+        sopsFile = ../secrets/peach.yaml;
+      };
+      home.activation.gitSecrets = lib.hm.dag.entryAfter [ "sops" ] ''
+        mkdir -p ~/.config/git
+        echo "[user]" > ~/.config/git/secrets.inc
+        echo "  email = $(cat ${config.sops.secrets.email.path})" >> ~/.config/git/secrets.inc
+        echo "  name = $(cat ${config.sops.secrets.fullname.path})" >> ~/.config/git/secrets.inc
+      '';
     };
 }
