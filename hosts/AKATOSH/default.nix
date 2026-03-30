@@ -17,6 +17,7 @@ in
     {
       imports = [
         ./hardware-configuration.nix
+        ./wifi.nix
       ];
 
       boot.loader = {
@@ -110,6 +111,15 @@ in
           package = pkgs.mullvad-vpn;
         };
 
+        openssh = {
+          enable = true;
+          settings = {
+            PasswordAuthentication = false;
+            PermitRootLogin = "no";
+            ListenAddress = "127.0.0.1";
+          };
+        };
+
         pcscd.enable = true;
 
         pipewire = {
@@ -139,6 +149,8 @@ in
         polkit.enable = true;
         rtkit.enable = true;
       };
+
+      sops.age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
 
       time = {
         timeZone = "Europe/Vilnius";
