@@ -4,7 +4,7 @@
 {
   home.packages = with pkgs; [
     gcc
-    jetbrains.webstorm
+    jetbrains.rider
     kubectl
     nil # Nix LSP
     sourcegit
