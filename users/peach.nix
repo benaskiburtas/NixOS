@@ -31,18 +31,18 @@
       };
 
       sops.age.keyFile = "/home/peach/.config/sops/age/keys.txt";
-      sops.secrets.email = {
+      sops.secrets.git_email = {
         sopsFile = ../secrets/peach.yaml;
       };
-      sops.secrets.fullname = {
+      sops.secrets.git_name = {
         sopsFile = ../secrets/peach.yaml;
       };
       home.activation.gitSecrets = lib.hm.dag.entryAfter [ "sops" ] ''
         mkdir -p ~/.config/git
         install -m 600 /dev/null ~/.config/git/secrets.inc
         echo "[user]" > ~/.config/git/secrets.inc
-        echo "  email = $(cat ${config.sops.secrets.email.path})" >> ~/.config/git/secrets.inc
-        echo "  name = $(cat ${config.sops.secrets.fullname.path})" >> ~/.config/git/secrets.inc
+        echo "  email = $(cat ${config.sops.secrets.git_email.path})" >> ~/.config/git/secrets.inc
+        echo "  name = $(cat ${config.sops.secrets.git_name.path})" >> ~/.config/git/secrets.inc
       '';
     };
 }
