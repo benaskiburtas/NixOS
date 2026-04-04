@@ -37,7 +37,7 @@
       sops.secrets.git_name = {
         sopsFile = ../secrets/peach.yaml;
       };
-      home.activation.gitSecrets = lib.hm.dag.entryAfter [ "sops" ] ''
+      home.activation.gitSecrets = lib.hm.dag.entryAfter [ "setupSecrets" ] ''
         mkdir -p ~/.config/git
         install -m 600 /dev/null ~/.config/git/secrets.inc
         echo "[user]" > ~/.config/git/secrets.inc
