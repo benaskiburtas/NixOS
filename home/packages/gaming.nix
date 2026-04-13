@@ -10,6 +10,7 @@
     protonplus
     protontricks
     r2modman
+    runelite
     samrewritten
     winetricks
     wineWow64Packages.staging
