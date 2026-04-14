@@ -11,6 +11,7 @@
     librewolf
     mpv
     planify
+    sparrow
     vlc
   ];
 }
