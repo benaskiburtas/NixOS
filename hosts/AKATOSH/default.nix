@@ -151,9 +151,6 @@ in
         sudo = {
           wheelNeedsPassword = true;
           execWheelOnly = true;
-          extraConfig = ''
-            Defaults requiretty
-          '';
         };
         polkit.enable = true;
         rtkit.enable = true;
