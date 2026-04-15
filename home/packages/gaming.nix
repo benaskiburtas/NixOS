@@ -4,6 +4,7 @@
 {
   home.packages = with pkgs; [
     archipelago
+    bolt-launcher
     ferium
     mangohud
     poptracker
