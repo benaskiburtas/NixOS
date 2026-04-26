@@ -3,12 +3,8 @@
 
 {
   home.packages = with pkgs; [
-    delve
     go
-    golangci-lint
     gopls
-    gotools
     jetbrains.goland
-    pkgsite
   ];
 }
