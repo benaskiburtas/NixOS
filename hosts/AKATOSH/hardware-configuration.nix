@@ -72,6 +72,6 @@
 
   boot.initrd.luks.devices."swap".device = "/dev/disk/by-uuid/3c8afd79-473e-4fa0-a2b8-a86069ba20d3";
 
-  stdenv.hostPlatform = lib.mkDefault "x86_64-linux";
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
