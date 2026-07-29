@@ -50,6 +50,8 @@ in
       i18n.defaultLocale = "en_US.UTF-8";
 
       networking = {
+        nameservers = [ "1.1.1.1" ];
+        networkmanager.dns = "none";
         firewall = {
           enable = true;
           interfaces."wlp4s0" = {
