@@ -52,6 +52,7 @@ in
       networking = {
         nameservers = [ "1.1.1.1" ];
         networkmanager.dns = "none";
+        networkmanager.wifi.powersave = false;
         firewall = {
           enable = true;
           interfaces."wlp4s0" = {
