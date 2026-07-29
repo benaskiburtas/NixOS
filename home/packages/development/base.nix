@@ -3,8 +3,8 @@
 
 {
   home.packages = with pkgs; [
+    antigravity-ide-fhs
     gcc
-    jetbrains.rider
     kubectl
     nil # Nix LSP
     sourcegit
