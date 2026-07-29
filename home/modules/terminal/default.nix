@@ -1,10 +1,10 @@
-{ ... }:
+_:
 
 {
   imports = [
+    ./alacritty.nix
     ./fish.nix
     ./starship.nix
-    ./wezterm.nix
     ./yazi.nix
   ];
 }

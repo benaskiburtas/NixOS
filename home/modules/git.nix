@@ -6,8 +6,9 @@
 }:
 
 {
-  home.packages = with pkgs; [
-    delta
+  home.packages = [
+    pkgs.delta
+    pkgs.gh
   ];
 
   programs.git = {
