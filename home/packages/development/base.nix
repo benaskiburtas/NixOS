@@ -3,7 +3,7 @@
 
 {
   home.packages = with pkgs; [
-    antigravity-ide-fhs
+    crush
     gcc
     kubectl
     nil # Nix LSP
