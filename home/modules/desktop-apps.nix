@@ -4,6 +4,7 @@
 {
   home.packages = [
     pkgs.librewolf
+    pkgs.pinta
     pkgs.planify
     pkgs.sparrow
   ];
